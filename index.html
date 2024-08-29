@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube</title>
+    <style>
+       
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #181818; /* Dark background */
+            color: #e0e0e0; /* Light text color */
+        }
+
+        header {
+            background: #121212; /* Dark header background */
+            border-bottom: 1px solid #333;
+            padding: 10px 20px;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff; /* White text color */
+        }
+
+        input[type="text"] {
+            flex: 1;
+            margin: 0 20px;
+            padding: 5px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            background: #333; /* Dark input background */
+            color: #e0e0e0; /* Light text color */
+        }
+
+        .user-menu button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #0073e6;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Main content */
+        .main-content {
+            display: flex;
+            padding: 20px;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: #121212; /* Dark sidebar background */
+            border-right: 1px solid #333;
+            padding: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 10px 0;
+            cursor: pointer;
+            color: #e0e0e0; /* Light text color */
+        }
+
+        .sidebar ul li:hover {
+            background-color: #333; /* Highlight on hover */
+        }
+
+        .video-section {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .video-player video {
+            width: 100%;
+            max-height: 500px;
+            border: 1px solid #333;
+        }
+
+        .video-description {
+            margin-top: 20px;
+        }
+
+        .video-thumbnails {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .thumbnail {
+            background: #333;
+            border-radius: 8px;
+            overflow: hidden;
+            flex: 1 1 calc(33.333% - 20px);
+            max-width: calc(33.333% - 20px);
+            cursor: pointer;
+            color: #e0e0e0; /* Light text color */
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            display: block;
+        }
+
+        .thumbnail h2 {
+            margin: 10px;
+            font-size: 16px;
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.05); /* Slight zoom effect */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Shadow effect */
+        }
+
+        .thumbnail:hover::before {
+            content: "▶"; /* Play icon */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 40px;
+            color: #fff;
+            pointer-events: none;
+        }
+
+        /* Overlay effect */
+        .thumbnail::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .thumbnail:hover::after {
+            opacity: 1;
+        }
+
+        .thumbnail:hover h2 {
+            color: #fff; /* Light text color on hover */
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #333;
+            }
+
+            .video-section {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header input[type="text"] {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .user-menu {
+                margin-top: 10px;
+            }
+
+            .video-thumbnails {
+                flex-direction: column;
+            }
+
+            .thumbnail {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">YouTube</div>
+            <input type="text" placeholder="Search...">
+            <div class="user-menu">
+                <button>Login</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <aside class="sidebar">
+            <ul>
+                <li>Home</li>
+                <li>Trending</li>
+                <li>Subscriptions</li>
+                <li>Library</li>   
+            <li>History</li>
+            <li>Liked Videos</li>
+            <li>Settings</li>
+            <li>Music</li>
+            <li>Gaming</li>
+            <li>Films</li>
+            <li>News</li>
+            <li>Shopping</li>
+            <li>Courses</li>
+            <li>YouTube Premium</li>
+            <li>YouTube Kids</li>
+            <li>YouTube Music</li>
+            <li>YouTube Studio</li>
+            <li> Subscriptions:-</li>
+            </ul>
+        </aside>
+        
+        <section class="video-section">
+            <div class="video-player">
+                <video controls>
+                    <source src="tmbtla.mp4.mp4">
+                    
+                </video>
+            </div>
+            <div class="video-description">
+                <h1>Take Me Back To LA</h1>
+                <p>Take me back to LA Music Video - The Weeknd  </p>
+            </div>
+
+            <!-- Video Thumbnails Section -->
+            <div class="video-thumbnails">
+                <div class="thumbnail">
+                    <img src="https://i.ytimg.com/vi/KEI4qSrkPAs/maxresdefault.jpg" alt="Thumbnail 1">
+                    <h2>Cant feel my face</h2>
+                </div>
+                <div class="thumbnail">
+                    <img src="data:image/jpeg;base64,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" alt="Thumbnail 2">
+                    <h2>Out of Time </h2>
+                </div>
+                <div class="thumbnail">
+                    <img src="https://i.ytimg.com/vi/yzTuBuRdAyA/maxresdefault.jpg" alt="Thumbnail 3">
+                    <h2>The Hills </h2>
+                </div>
+                <div class="thumbnail">
+                    <img src="https://i.pinimg.com/736x/9c/33/4a/9c334afeec11a576612adf03d3543e95.jpg" alt="Thumbnail 4">
+                    <h2>Take me back to LA</h2>
+                </div>
+                <div class="thumbnail">
+                    <img src="https://i.ytimg.com/vi/ygTZZpVkmKg/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGGUgYChBMA8=&rs=AOn4CLBE8YhxHox2EeKjV7QNJ99wjJhLeQ" alt="Thumbnail 5">
+                    <h2>After Hours </h2>
+                </div>
+                <div class="thumbnail">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTah5W-1wICODD613PGJWtd4zw9IJDjY7p5TQ&s" alt="Thumbnail 6">
+                    <h2>Too Late </h2>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
